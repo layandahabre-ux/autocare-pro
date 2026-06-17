@@ -1,0 +1,22 @@
+הרצת המערכת (Deployment)
+=========================
+
+תיקייה זו מכילה את האפליקציה השלמה והרצה של AutoCare Pro.
+
+שלבים:
+1. העתיקו את כל תוכן תיקייה זו אל:  C:\xampp\htdocs\garage-app
+2. הפעילו Apache + MySQL ב-XAMPP.
+3. ייבאו את sql/schema.sql דרך phpMyAdmin (יוצר את garage_db + נתוני דמו).
+4. גשו אל:  http://localhost/garage-app/
+5. התחברו עם:  admin / Aa123456!
+
+מבנה הקוד:
+  config/   — חיבור DB, אימות, הרשאות (RBAC)   [Backend]
+  auth/     — כניסה/הרשמה/שחזור סיסמה            [Backend]
+  api/      — נקודות קצה REST (JSON)            [Backend]
+  pages/    — עמודי ממשק (CRUD)                  [Backend+Frontend]
+  includes/ — תבנית משותפת                       [Backend+Frontend]
+  assets/   — CSS, JS, תמונות                    [Frontend]
+  sql/      — schema.sql                          [Database]
+
+להוראות מלאות ראו README.md בשורש הפרויקט.

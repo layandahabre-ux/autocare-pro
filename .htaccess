@@ -1,0 +1,23 @@
+# AutoCare Pro — הגדרות אבטחה ו-routing בסיסיות
+
+# הגנה על קבצים רגישים
+<FilesMatch "\.(sql|md|json|log)$">
+    Require all denied
+</FilesMatch>
+
+# מניעת רישום ספריות
+Options -Indexes
+
+# כותרות אבטחה
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# עמודי שגיאה מותאמים
+ErrorDocument 404 /garage-app/pages/error.php?code=404
+ErrorDocument 500 /garage-app/pages/error.php?code=500
+
+# קידוד ברירת מחדל
+AddDefaultCharset UTF-8
